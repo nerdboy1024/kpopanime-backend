@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - K-pop Anime Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .confirmation-container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .success-icon::after {
+            content: "✓";
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #1f2937;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .order-number {
+            color: #6b7280;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .order-number code {
+            background: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            color: #FF1493;
+        }
+
+        .message {
+            color: #4b5563;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #FF1493;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #C71585;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 20, 147, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .info-box {
+            background: #f0fdf4;
+            border: 2px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .info-box h3 {
+            color: #166534;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .info-box p {
+            color: #15803d;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .confirmation-container {
+                padding: 40px 24px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="success-icon"></div>
+
+        <h1>🌙 Payment Successful!</h1>
+
+        <div class="order-number">
+            Order #<code id="orderNumber">Loading...</code>
+        </div>
+
+        <div class="message">
+            Thank you for your purchase from K-pop Anime Shop! Your order has been confirmed and we'll send you an email confirmation shortly.
+        </div>
+
+        <div class="action-buttons">
+            <a href="/" class="btn btn-primary">Continue Shopping</a>
+            <a href="javascript:window.print()" class="btn btn-secondary">Print Receipt</a>
+        </div>
+
+        <div class="info-box">
+            <h3>✨ What's Next?</h3>
+            <p>
+                • Check your email for order confirmation and receipt<br>
+                • We'll send you tracking information once your order ships<br>
+                • Your order will be processed within 1-2 business days
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Extract order ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('orderId') || urlParams.get('reference_id') || 'Pending';
+
+        document.getElementById('orderNumber').textContent = orderId;
+
+        // Clear cart from localStorage after successful checkout
+        if (localStorage.getItem('chordeva_cart')) {
+            localStorage.removeItem('chordeva_cart');
+            console.log('Cart cleared after successful checkout');
+        }
+    </script>
+</body>
+</html>

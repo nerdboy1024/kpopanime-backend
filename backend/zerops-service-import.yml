@@ -1,0 +1,9 @@
+# Import K-pop Anime Shop API service into existing project
+services:
+  - hostname: api
+    type: nodejs@20
+    enableSubdomainAccess: true
+    ports:
+      - port: 5000
+        protocol: http
+        public: true

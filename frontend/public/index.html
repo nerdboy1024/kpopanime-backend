@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K-pop Anime Shop - Premium K-pop and anime merchandise. T-shirts, hoodies, mugs, posters, keychains and more from your favorite artists and shows.">
+    <meta name="keywords" content="kpop, anime, merchandise, tshirts, hoodies, posters, mugs, keychains, printful, kpop merch, anime merch">
+    <title>K-pop Anime Shop - Premium K-pop & Anime Merchandise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="moon-icon">🎌</span>
+                <h1>K-pop Anime Shop</h1>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#new">New Arrivals</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="cart-nav-item">
+                    <button class="cart-icon-btn" id="cartIconBtn" onclick="openCartModal()">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="navCartCount">0</span>
+                    </button>
+                </li>
+
+                <!-- Auth Navigation Items -->
+                <!-- Shown when logged OUT -->
+                <li class="auth-nav-item" id="authNavGuest" style="display: none;">
+                    <a href="/auth.html" class="nav-auth-link">
+                        <span class="auth-icon">👤</span>
+                        Sign In
+                    </a>
+                </li>
+
+                <!-- Shown when logged IN -->
+                <li class="auth-nav-item auth-dropdown" id="authNavUser" style="display: none;">
+                    <button class="nav-user-btn" id="navUserBtn">
+                        <span class="user-avatar" id="navUserAvatar">👤</span>
+                        <span class="user-name" id="navUserName">Account</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="auth-dropdown-menu" id="authDropdownMenu">
+                        <a href="/preferences.html" class="dropdown-item">
+                            <span>⚙️</span> My Preferences
+                        </a>
+                        <a href="#" id="adminLink" class="dropdown-item" style="display: none;">
+                            <span>⚔️</span> Admin Panel
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" id="navSignOut">
+                            <span>🚪</span> Sign Out
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to K-pop Anime Shop</h1>
+            <p class="hero-subtitle">Your Destination for Premium K-pop & Anime Merch</p>
+            <p class="hero-description">Clothing • Posters • Accessories • Custom Designs</p>
+            <div class="hero-buttons">
+                <a href="#shop" class="btn btn-primary">Shop Now</a>
+                <a href="#new" class="btn btn-secondary">New Arrivals</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="card-icon">👕</div>
+                    <h3>Premium Apparel</h3>
+                    <p>High-quality t-shirts, hoodies, and clothing from your favorite K-pop groups and anime</p>
+                </div>
+                <div class="featured-card">
+                    <div class="card-icon">🖼️</div>
+                    <h3>Posters & Prints</h3>
+                    <p>Stunning posters and art prints to decorate your space</p>
+                </div>
+                <div class="featured-card">
+                    <div class="card-icon">☕</div>
+                    <h3>Accessories & More</h3>
+                    <p>Mugs, keychains, phone cases, and unique collectibles</p>
+                </div>
+                <div class="featured-card">
+                    <div class="card-icon">✨</div>
+                    <h3>Custom Designs</h3>
+                    <p>Exclusive designs created by talented artists in the community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <div class="container">
+            <h2 class="section-title">Shop Our Collection</h2>
+            <p class="section-subtitle">Premium K-pop and anime merchandise for fans</p>
+
+            <div class="shop-filters">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="clothing">Clothing</button>
+                <button class="filter-btn" data-filter="posters">Posters</button>
+                <button class="filter-btn" data-filter="accessories">Accessories</button>
+                <button class="filter-btn" data-filter="home">Home & Living</button>
+            </div>
+
+            <div class="shop-grid" id="shopGrid">
+                <!-- Sample Products - Replace with actual products -->
+                <div class="product-card" data-category="clothing">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/FF1493/FFFFFF?text=K-pop+T-Shirt" alt="K-pop Group T-Shirt">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>K-pop Group T-Shirt</h3>
+                        <p class="product-description">Premium cotton unisex tee</p>
+                        <p class="product-price">$24.99</p>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="clothing">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/4169E1/FFFFFF?text=Anime+Hoodie" alt="Anime Character Hoodie">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anime Character Hoodie</h3>
+                        <p class="product-description">Cozy fleece pullover hoodie</p>
+                        <p class="product-price">$44.99</p>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="posters">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/9370DB/FFFFFF?text=Anime+Poster" alt="Anime Art Poster">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anime Art Poster</h3>
+                        <p class="product-description">High-quality 18x24 print</p>
+                        <p class="product-price">$19.99</p>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/FF6347/FFFFFF?text=Keychain" alt="Character Keychain">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Character Keychain</h3>
+                        <p class="product-description">Acrylic charm keychain</p>
+                        <p class="product-price">$9.99</p>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/20B2AA/FFFFFF?text=K-pop+Mug" alt="K-pop Coffee Mug">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>K-pop Coffee Mug</h3>
+                        <p class="product-description">Ceramic 11oz mug</p>
+                        <p class="product-price">$14.99</p>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/FF69B4/FFFFFF?text=Phone+Case" alt="Anime Phone Case">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anime Phone Case</h3>
+                        <p class="product-description">Custom design phone case</p>
+                        <p class="product-price">$19.99</p>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Latest News</h2>
+            <p class="section-subtitle">K-pop updates, anime releases, and merch news</p>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250/FF1493/FFFFFF?text=New+Releases" alt="New K-pop Releases">
+                        <div class="blog-category">K-pop</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>New K-pop Album Merch Drops This Month</h3>
+                        <p class="blog-meta">October 15, 2025 • 5 min read</p>
+                        <p>Check out the latest merchandise releases featuring your favorite K-pop groups and exclusive limited edition items...</p>
+                        <a href="#" class="blog-read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250/4169E1/FFFFFF?text=Anime+Guide" alt="Anime Season Guide">
+                        <div class="blog-category">Anime</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Must-Watch Anime This Season: Complete Guide</h3>
+                        <p class="blog-meta">October 10, 2025 • 8 min read</p>
+                        <p>Explore the hottest new anime series this season and discover exclusive merchandise for each show...</p>
+                        <a href="#" class="blog-read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250/9370DB/FFFFFF?text=Style+Guide" alt="Fan Style Guide">
+                        <div class="blog-category">Style</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Style Your Favorite K-pop & Anime Merch</h3>
+                        <p class="blog-meta">October 5, 2025 • 6 min read</p>
+                        <p>Get fashion inspiration and tips on how to incorporate your favorite fandom merch into everyday outfits...</p>
+                        <a href="#" class="blog-read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-cta">
+                <a href="#" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new" class="shows">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <p class="section-subtitle">Check out the latest additions to our collection</p>
+
+            <div class="shows-content">
+                <div class="latest-video">
+                    <div class="video-wrapper">
+                        <!-- Featured product area -->
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF1493 0%, #4169E1 100%); border-radius: 10px;">
+                            <div style="text-align: center; color: #FFFFFF;">
+                                <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+                                <p style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin: 0;">Loading new arrivals...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Featured New Products</h3>
+                        <p>Fresh designs and exclusive drops added weekly</p>
+                        <div class="video-meta">
+                            <span>🛍️ <a href="#shop" style="color: #FF1493; text-decoration: none;">Browse All New Items →</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://via.placeholder.com/300x180/FF1493/FFFFFF?text=Limited+Edition" alt="Limited Edition Drop">
+                            <div class="play-icon">NEW</div>
+                        </div>
+                        <h4>Limited Edition K-pop Collection</h4>
+                        <p class="video-date">Just Added</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://via.placeholder.com/300x180/4169E1/FFFFFF?text=Anime+Series" alt="Anime Series Merch">
+                            <div class="play-icon">NEW</div>
+                        </div>
+                        <h4>Seasonal Anime Merchandise</h4>
+                        <p class="video-date">This Week</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://via.placeholder.com/300x180/9370DB/FFFFFF?text=Artist+Collab" alt="Artist Collaboration">
+                            <div class="play-icon">NEW</div>
+                        </div>
+                        <h4>Artist Collaboration Collection</h4>
+                        <p class="video-date">Featured</p>
+                    </div>
+                </div>
+
+                <div class="subscribe-cta">
+                    <h3>Stay Updated</h3>
+                    <p>Get notified when new merchandise drops and exclusive deals become available</p>
+                    <a href="#newsletter" class="btn btn-youtube">
+                        <span>📧</span> Join Our Newsletter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x500/FF1493/FFFFFF?text=K-pop+Anime+Shop" alt="K-pop Anime Shop">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">About Us</h2>
+                    <p>Welcome to K-pop Anime Shop, your premier destination for high-quality K-pop and anime merchandise. We're passionate fans just like you, and we know how important it is to show your love for your favorite artists and series.</p>
+
+                    <p>Our mission is to provide fans worldwide with authentic, premium-quality merchandise at fair prices. From trendy apparel to collectible accessories, every item in our shop is carefully selected to meet the highest quality standards.</p>
+
+                    <p>We partner with trusted manufacturers like Printful to ensure that every product is made with care and delivered right to your door. Whether you're looking for the perfect poster for your room or a stylish hoodie featuring your bias, we've got you covered.</p>
+
+                    <div class="about-specialties">
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li>Premium Quality Apparel & Clothing</li>
+                            <li>High-Resolution Posters & Art Prints</li>
+                            <li>Unique Accessories & Collectibles</li>
+                            <li>Custom Designs by Talented Artists</li>
+                            <li>Fast Shipping & Great Customer Service</li>
+                        </ul>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon">📷 Instagram</a>
+                        <a href="#" class="social-icon">🐦 Twitter</a>
+                        <a href="#" class="social-icon">📘 Facebook</a>
+                        <a href="#" class="social-icon">💬 Discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Community</h2>
+                <p>Subscribe to receive exclusive drops, special offers, and the latest K-pop & anime news delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>K-pop Anime Shop</h4>
+                    <p>Your destination for premium K-pop and anime merchandise.</p>
+                    <p class="footer-tagline">🎌 Made with ♥ for fans 🎌</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#shop">Clothing</a></li>
+                        <li><a href="#shop">Posters</a></li>
+                        <li><a href="#shop">Accessories</a></li>
+                        <li><a href="#shop">Home & Living</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 K-pop Anime Shop. All rights reserved. • <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-overlay" onclick="closeCartModal()"></div>
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Your Cart</h2>
+                <button class="cart-modal-close" onclick="closeCartModal()">✕</button>
+            </div>
+            <div class="cart-modal-body" id="cartModalBody">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="cart-modal-footer" id="cartModalFooter">
+                <!-- Checkout button will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (Modern modular approach) -->
+    <script type="module" src="script-firebase.js"></script>
+
+    <!-- Main JavaScript -->
+    <script type="module" src="script.js"></script>
+
+    <!-- Progressive Profiling Modal -->
+    <script type="module" src="profile-prompt.js"></script>
+
+    <!-- YouTube Integration -->
+    <script src="youtube-integration.js"></script>
+</body>
+</html>

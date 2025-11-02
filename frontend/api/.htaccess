@@ -1,0 +1,31 @@
+# Chordeva Cave API Security Rules
+
+# Only allow POST requests to upload.php
+<Files "upload.php">
+    <LimitExcept POST OPTIONS>
+        Order deny,allow
+        Deny from all
+    </LimitExcept>
+</Files>
+
+# Prevent directory listing
+Options -Indexes
+
+# Enable CORS for specific origins (update in production)
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Prevent access to hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# File upload size limit (adjust in php.ini for larger sizes)
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
