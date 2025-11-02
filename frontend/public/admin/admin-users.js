@@ -8,7 +8,7 @@ import { showNotification, navigateTo } from './admin.js';
 
 const API_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:5000/api'
-    : 'https://www.kpopanimeshop.com/api';
+    : 'https://kpopanime-backend.onrender.com/api';
 
 let currentUserData = null;
 
