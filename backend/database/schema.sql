@@ -1,5 +1,5 @@
 -- ===========================
--- CHORDEVA'S CAVE DATABASE SCHEMA
+-- K-POP ANIME SHOP DATABASE SCHEMA
 -- ===========================
 
 -- Enable UUID extension

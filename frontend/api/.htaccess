@@ -1,4 +1,4 @@
-# Chordeva Cave API Security Rules
+# K-pop Anime Shop API Security Rules
 
 # Only allow POST requests to upload.php
 <Files "upload.php">

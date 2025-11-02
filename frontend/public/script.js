@@ -459,8 +459,8 @@ videoCards.forEach(card => {
 // CONSOLE MESSAGE
 // ===========================
 
-console.log('%c🌙 Welcome to Chordeva\'s Cave 🌙', 'color: #FF1493; font-size: 20px; font-weight: bold;');
-console.log('%cMagic is real, and so is good code ✨', 'color: #FF69B4; font-size: 14px;');
+console.log('%c🎵 Welcome to K-pop Anime Shop 🎵', 'color: #FF1493; font-size: 20px; font-weight: bold;');
+console.log('%cYour favorite K-pop & Anime destination ✨', 'color: #FF69B4; font-size: 14px;');
 
 // ===========================
 // AUTH NAVIGATION MANAGEMENT

@@ -7,7 +7,7 @@ import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/fi
 
 const API_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:5000/api'
-    : 'https://chordevacave-backend.onrender.com/api';
+    : 'https://www.kpopanimeshop.com/api';
 
 const messageContainer = document.getElementById('messageContainer');
 const preferencesForm = document.getElementById('preferencesForm');

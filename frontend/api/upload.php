@@ -1,6 +1,6 @@
 <?php
 /**
- * Chordeva Cave - Image Upload API
+ * K-pop Anime Shop - Image Upload API
  *
  * Handles image uploads for the admin panel with Firebase authentication
  * Saves images to /assets/products/ or /assets/blog/
@@ -45,7 +45,7 @@ define('UPLOAD_BASE_PATH', dirname(__DIR__) . '/public/assets/');
 define('WEB_BASE_PATH', '/assets/');
 
 // Firebase Project ID (update with your project ID)
-define('FIREBASE_PROJECT_ID', 'chordeva-cave');
+define('FIREBASE_PROJECT_ID', 'kpopanimeshop');
 
 // ======================
 // HELPER FUNCTIONS

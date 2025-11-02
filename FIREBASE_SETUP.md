@@ -108,82 +108,6 @@ node scripts/test-firebase.js
 
 ---
 
-## Next Steps for Zerops.io Deployment
-
-Your existing Zerops configuration files are in the `backend/` directory, but they need to be updated for the K-pop Anime Shop:
-
-### 1. Update Zerops Configuration Files
-
-**Current files to update:**
-- `backend/zerops.yml`
-- `backend/zerops-project.yml`
-- `backend/zerops-service-import.yml`
-
-**Changes needed:**
-- Update project name from "chordevacave" to "kpopanimeshop"
-- Add frontend service configuration
-- Update environment variables
-
-### 2. Configure Environment Variables in Zerops
-
-You'll need to set these as **secrets** in your Zerops project:
-
-```bash
-# Firebase Configuration (from serviceAccountKey.json)
-FIREBASE_PROJECT_ID=kpopanimeshop
-FIREBASE_CLIENT_EMAIL=firebase-adminsdk-fbsvc@kpopanimeshop.iam.gserviceaccount.com
-FIREBASE_PRIVATE_KEY=<your-private-key>
-
-# JWT Secret
-JWT_SECRET=<generate-a-secure-random-string>
-
-# Admin Credentials
-ADMIN_EMAIL=admin@kpopanimeshop.com
-ADMIN_PASSWORD=<change-this-password>
-
-# Application URLs (set after Zerops deployment)
-FRONTEND_URL=https://<your-zerops-frontend-url>
-API_URL=https://<your-zerops-backend-url>
-
-# Optional: Printful API (if using print-on-demand)
-PRINTFUL_API_KEY=<your-printful-key>
-```
-
-### 3. Domain Configuration
-
-Your domains:
-- Primary: `www.kpopanimeshop.com`
-- Secondary: `www.kpopanime.shop` (forwarding to .com)
-
-**Firebase Authorized Domains:**
-You'll need to add your Zerops and custom domains to Firebase:
-1. Go to: https://console.firebase.google.com/project/kpopanimeshop/authentication/settings
-2. Under "Authorized domains", add:
-   - `kpopanimeshop.com`
-   - `www.kpopanimeshop.com`
-   - `kpopanime.shop`
-   - `www.kpopanime.shop`
-   - Your Zerops domain (e.g., `<project>.zerops.app`)
-
-### 4. CORS Configuration
-
-Update CORS in `backend/server.js` to include your production domains:
-- `https://www.kpopanimeshop.com`
-- `https://kpopanimeshop.com`
-- `https://www.kpopanime.shop`
-- `https://kpopanime.shop`
-- Your Zerops URLs
-
-### 5. Storage Strategy
-
-Your app currently uses local file uploads (`./uploads`) which won't persist on Zerops.
-
-**Recommended**: Migrate all file uploads to Firebase Storage (already configured).
-
-Update `backend/routes/products.js` and other upload routes to use Firebase Storage exclusively.
-
----
-
 ## File Structure
 
 ```
@@ -203,8 +127,7 @@ kpopanimeshop.com/
 │   │   ├── seed-blog.js          # Seed blog posts
 │   │   ├── create-admin.js       # Create admin user
 │   │   └── test-firebase.js      # Test Firebase connection
-│   ├── package.json              # ✅ Updated with new scripts
-│   └── zerops.yml                # ⚠️ Needs updating for new project
+│   └── package.json              # ✅ Updated with new scripts
 ├── frontend/
 │   └── firebase-config.js        # ✅ Updated to kpopanimeshop project
 └── serviceAccountKey.json        # ✅ Firebase credentials
@@ -294,18 +217,16 @@ npm run create:admin newemail@example.com SecurePassword123!
 ## What's Next?
 
 1. ✅ **Firebase Setup** - COMPLETE
-2. ⏭️ **Update Zerops Configuration** - Update project name and environment variables
-3. ⏭️ **Deploy to Zerops** - Deploy backend and frontend services
-4. ⏭️ **Configure Custom Domains** - Point kpopanimeshop.com to Zerops
-5. ⏭️ **Test Production** - Verify all features work on Zerops
-6. ⏭️ **Set Up Monitoring** - Configure logging and error tracking
+2. ⏭️ **Deploy to Production** - Deploy backend and frontend services to your hosting provider
+3. ⏭️ **Configure Custom Domains** - Point kpopanimeshop.com to your hosting
+4. ⏭️ **Test Production** - Verify all features work in production
+5. ⏭️ **Set Up Monitoring** - Configure logging and error tracking
 
 ---
 
 ## Support
 
 - Firebase Docs: https://firebase.google.com/docs
-- Zerops Docs: https://docs.zerops.io
 - Project GitHub: (your repo URL)
 
 ---

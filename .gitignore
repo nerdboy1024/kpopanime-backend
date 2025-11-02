@@ -8,6 +8,8 @@ node_modules/
 
 # Firebase credentials (NEVER commit this!)
 serviceAccountKey.json
+*-firebase-adminsdk-*.json
+kpopanimeshop-*.json
 
 # Logs
 logs/
@@ -23,6 +25,9 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Claude settings
+.claude/settings.local.json
 
 # Uploads
 uploads/

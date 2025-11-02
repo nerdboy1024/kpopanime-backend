@@ -13,12 +13,12 @@ function initCart() {
 
 // Get cart from localStorage
 function getCart() {
-    return JSON.parse(localStorage.getItem('chordeva_cart') || '[]');
+    return JSON.parse(localStorage.getItem('kpopanime_cart') || '[]');
 }
 
 // Save cart to localStorage
 function saveCart(cart) {
-    localStorage.setItem('chordeva_cart', JSON.stringify(cart));
+    localStorage.setItem('kpopanime_cart', JSON.stringify(cart));
     updateNavCartCount();
 }
 

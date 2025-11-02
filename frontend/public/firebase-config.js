@@ -1,15 +1,15 @@
 // Firebase Configuration
-// Chordeva Cave Project
+// K-pop Anime Shop Project
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCQfQUmUuKHp3VvHQ2MFX9r9Me_Tl59CQo",
-  authDomain: "chordeva-cave.firebaseapp.com",
-  projectId: "chordeva-cave",
-  storageBucket: "chordeva-cave.firebasestorage.app",
-  messagingSenderId: "1045932482811",
-  appId: "1:1045932482811:web:e901a4d6d971671513905e",
-  measurementId: "G-2MB3PKNQH3"
+  apiKey: "AIzaSyAuxalH8BqkQrxNSz-01RAmPhK6d_MHbFA",
+  authDomain: "kpopanimeshop.firebaseapp.com",
+  projectId: "kpopanimeshop",
+  storageBucket: "kpopanimeshop.firebasestorage.app",
+  messagingSenderId: "367322718227",
+  appId: "1:367322718227:web:43b259f301af61ca6c5fe6"
 };
+
 
 // Initialize Firebase
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';

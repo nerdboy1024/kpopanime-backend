@@ -6,7 +6,7 @@
 
 const API_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:5000/api'
-    : 'https://chordevacave-backend.onrender.com/api';
+    : 'https://www.kpopanimeshop.com/api';
 
 class ProfilePromptModal {
     constructor() {

@@ -346,7 +346,7 @@ function addToCart(buyNow = false) {
     };
 
     // Get existing cart
-    let cart = JSON.parse(localStorage.getItem('chordeva_cart') || '[]');
+    let cart = JSON.parse(localStorage.getItem('kpopanime_cart') || '[]');
 
     // Check if item already exists
     const existingIndex = cart.findIndex(item =>
@@ -360,7 +360,7 @@ function addToCart(buyNow = false) {
     }
 
     // Save cart
-    localStorage.setItem('chordeva_cart', JSON.stringify(cart));
+    localStorage.setItem('kpopanime_cart', JSON.stringify(cart));
 
     // Update cart count
     initCartCount();
@@ -378,7 +378,7 @@ function initWishlist() {
     const wishlistIcon = document.getElementById('wishlistIcon');
 
     // Check if product is in wishlist
-    let wishlist = JSON.parse(localStorage.getItem('chordeva_wishlist') || '[]');
+    let wishlist = JSON.parse(localStorage.getItem('kpopanime_wishlist') || '[]');
     const isInWishlist = wishlist.some(item => item.productId === currentProduct.id);
 
     if (isInWishlist) {
@@ -387,7 +387,7 @@ function initWishlist() {
     }
 
     wishlistBtn?.addEventListener('click', () => {
-        wishlist = JSON.parse(localStorage.getItem('chordeva_wishlist') || '[]');
+        wishlist = JSON.parse(localStorage.getItem('kpopanime_wishlist') || '[]');
         const index = wishlist.findIndex(item => item.productId === currentProduct.id);
 
         if (index >= 0) {
@@ -409,7 +409,7 @@ function initWishlist() {
             showToast('Added to wishlist!');
         }
 
-        localStorage.setItem('chordeva_wishlist', JSON.stringify(wishlist));
+        localStorage.setItem('kpopanime_wishlist', JSON.stringify(wishlist));
     });
 }
 
@@ -630,7 +630,7 @@ async function submitReview() {
 
 // Update cart count in nav
 function initCartCount() {
-    const cart = JSON.parse(localStorage.getItem('chordeva_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('kpopanime_cart') || '[]');
     const count = cart.reduce((total, item) => total + item.quantity, 0);
     const cartCountEl = document.getElementById('navCartCount');
     if (cartCountEl) {

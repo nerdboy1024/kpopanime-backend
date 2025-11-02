@@ -20,7 +20,7 @@ function question(query) {
 }
 
 async function seedRoles() {
-    console.log('🔮 Chordeva Cave - Firebase Role Seeding Script\n');
+    console.log('🎵 K-pop Anime Shop - Firebase Role Seeding Script\n');
 
     try {
         // List all users

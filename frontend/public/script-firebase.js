@@ -262,7 +262,7 @@ function initializeProductInteractions() {
 // SHOPPING CART (with localStorage)
 // ===========================
 
-let cart = JSON.parse(localStorage.getItem('chordeva_cart')) || [];
+let cart = JSON.parse(localStorage.getItem('kpopanime_cart')) || [];
 
 function addToCart(product) {
     // Parse price to ensure it's a number
@@ -285,7 +285,7 @@ function addToCart(product) {
     }
 
     // Save to localStorage
-    localStorage.setItem('chordeva_cart', JSON.stringify(cart));
+    localStorage.setItem('kpopanime_cart', JSON.stringify(cart));
 
     console.log('Cart updated:', cart);
 }
@@ -696,8 +696,8 @@ videoCards.forEach(card => {
 });
 
 // Console Message
-console.log('%c🌙 Welcome to Chordeva\'s Cave 🌙', 'color: #FF1493; font-size: 20px; font-weight: bold;');
-console.log('%cMagic is real, and so is good code ✨', 'color: #FF69B4; font-size: 14px;');
+console.log('%c🎵 Welcome to K-pop Anime Shop 🎵', 'color: #FF1493; font-size: 20px; font-weight: bold;');
+console.log('%cYour favorite K-pop & Anime destination ✨', 'color: #FF69B4; font-size: 14px;');
 console.log('%c🔥 Powered by Firebase', 'color: #fbbf24; font-size: 14px;');
 
 // ===========================
@@ -706,7 +706,7 @@ console.log('%c🔥 Powered by Firebase', 'color: #fbbf24; font-size: 14px;');
 
 // Cart management functions
 function getCart() {
-    const cart = JSON.parse(localStorage.getItem('chordeva_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('kpopanime_cart') || '[]');
     // Normalize prices to ensure they're numbers
     return cart.map(item => {
         let price = item.price;
@@ -732,7 +732,7 @@ function getCart() {
 }
 
 function saveCart(cart) {
-    localStorage.setItem('chordeva_cart', JSON.stringify(cart));
+    localStorage.setItem('kpopanime_cart', JSON.stringify(cart));
     updateCartCount();
 }
 

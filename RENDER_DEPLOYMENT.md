@@ -539,23 +539,5 @@ git push origin main
 
 ---
 
-## Differences from Zerops
-
-If you were considering Zerops before:
-
-| Feature | Render | Zerops |
-|---------|--------|--------|
-| Free Tier | Yes (with cold starts) | No |
-| Auto-scaling | Paid plans | Yes |
-| Database | Bring your own (Firebase) | Built-in PostgreSQL |
-| Deployment | Git or CLI | CLI |
-| Region Options | Multiple | Multiple |
-| Cold Starts | Free tier only | No |
-| Learning Curve | Easy | Moderate |
-
-Render is generally easier for beginners and has a better free tier, making it a good choice for this project.
-
----
-
 **Last Updated**: 2025-11-02
 **Version**: 1.0.0

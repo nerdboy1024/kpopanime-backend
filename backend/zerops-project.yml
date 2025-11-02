@@ -1,9 +1,0 @@
-# Zerops project import definition
-# K-pop Anime Shop - E-commerce platform for K-pop and anime merchandise
-project:
-  name: kpopanime
-
-services:
-  - hostname: api
-    type: nodejs@20
-    enableSubdomainAccess: true

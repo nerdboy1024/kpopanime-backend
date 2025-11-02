@@ -1,5 +1,5 @@
 // ===========================
-// CHORDEVA'S CAVE - ADMIN PANEL
+// K-POP ANIME SHOP - ADMIN PANEL
 // Complete Admin Panel with Firebase
 // ===========================
 
@@ -829,7 +829,7 @@ function showBlogForm(postId = null) {
     document.getElementById('blogExcerpt').value = post?.excerpt || '';
     document.getElementById('blogCategory').value = post?.category || '';
     document.getElementById('blogTags').value = post?.tags?.join(', ') || '';
-    document.getElementById('blogAuthor').value = post?.authorName || 'Chordeva';
+    document.getElementById('blogAuthor').value = post?.authorName || 'K-pop Anime Shop';
     document.getElementById('blogPublished').checked = post?.isPublished || false;
 
     // Clear and set featured image
@@ -1938,7 +1938,7 @@ window.adminApp = {
     showNotification
 };
 
-console.log('%c🌙 Chordeva\'s Cave Admin Panel 🌙', 'color: #FF1493; font-size: 20px; font-weight: bold;');
+console.log('%c🎵 K-pop Anime Shop Admin Panel 🎵', 'color: #FF1493; font-size: 20px; font-weight: bold;');
 console.log('%cWelcome to the War Room ✨', 'color: #FF69B4; font-size: 14px;');
 console.log('%c[VERSION] Admin.js v2024-10-24-DELETE-FIX', 'background: #22c55e; color: white; padding: 2px 4px; font-weight: bold;');
 

@@ -46,20 +46,20 @@ async function loadYouTubeVideos() {
                                 <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 400px; line-height: 1.6;">
                                     Mystical content is on the way! Subscribe to be notified when new videos drop.
                                 </p>
-                                <a href="https://youtube.com/@chordevacave?sub_confirmation=1" target="_blank"
+                                <a href="https://youtube.com/@kpopanimeshop?sub_confirmation=1" target="_blank"
                                    style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #FF1493, #C71585);
                                           color: white; text-decoration: none; border-radius: 10px; font-weight: 600;
                                           transition: transform 0.3s; font-family: 'Cinzel', serif;">
-                                    🔔 Subscribe to Chordeva Cave
+                                    🔔 Subscribe to K-pop Anime Shop
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="video-info">
-                        <h3>Mystical Content Coming Soon</h3>
-                        <p>The Chordeva Cave channel is brand new! Videos featuring crystals, tarot, occult wisdom, and feline familiars are coming soon.</p>
+                        <h3>K-pop & Anime Content Coming Soon</h3>
+                        <p>The K-pop Anime Shop channel is brand new! Videos featuring unboxings, reviews, and exclusive merchandise showcases are coming soon.</p>
                         <div class="video-meta">
-                            <span>📺 <a href="https://youtube.com/@chordevacave" target="_blank" style="color: #FF1493; text-decoration: none;">Visit Channel →</a></span>
+                            <span>📺 <a href="https://youtube.com/@kpopanimeshop" target="_blank" style="color: #FF1493; text-decoration: none;">Visit Channel →</a></span>
                         </div>
                     </div>
                 `;
