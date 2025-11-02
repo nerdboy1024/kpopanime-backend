@@ -113,7 +113,7 @@ loginForm.addEventListener('submit', async (e) => {
 
         // Redirect after short delay
         setTimeout(() => {
-            window.location.href = '/';
+            window.location.href = 'https://kpopanimeshop.com/';
         }, 1000);
 
     } catch (error) {
@@ -180,7 +180,7 @@ signupForm.addEventListener('submit', async (e) => {
 
         // Redirect to preferences page
         setTimeout(() => {
-            window.location.href = '/preferences.html';
+            window.location.href = 'https://kpopanimeshop.com/preferences.html';
         }, 1500);
 
     } catch (error) {
@@ -254,9 +254,9 @@ async function handleGoogleSignIn(isSignup = false) {
         // If new user, redirect to preferences, otherwise to home
         setTimeout(() => {
             if (data.isNewUser) {
-                window.location.href = '/preferences.html';
+                window.location.href = 'https://kpopanimeshop.com/preferences.html';
             } else {
-                window.location.href = '/';
+                window.location.href = 'https://kpopanimeshop.com/';
             }
         }, 1000);
 
@@ -299,5 +299,5 @@ function getErrorMessage(errorCode) {
 const authToken = localStorage.getItem('authToken');
 if (authToken) {
     // User is already logged in, redirect to home
-    window.location.href = '/';
+    window.location.href = 'https://kpopanimeshop.com/';
 }

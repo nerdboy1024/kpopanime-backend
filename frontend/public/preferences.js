@@ -21,7 +21,7 @@ let currentUser = null;
 
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = '/auth.html';
+        window.location.href = 'https://kpopanimeshop.com/auth.html';
     } else {
         currentUser = user;
         loadPreferences();
@@ -225,11 +225,11 @@ logoutBtn.addEventListener('click', async (e) => {
             await signOut(auth);
             localStorage.removeItem('authToken');
             localStorage.removeItem('userId');
-            window.location.href = '/auth.html';
+            window.location.href = 'https://kpopanimeshop.com/auth.html';
         } catch (error) {
             console.error('Logout error:', error);
             // Still redirect even if signout fails
-            window.location.href = '/auth.html';
+            window.location.href = 'https://kpopanimeshop.com/auth.html';
         }
     }
 });
