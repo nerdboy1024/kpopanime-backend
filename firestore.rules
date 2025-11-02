@@ -2,36 +2,59 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return request.auth != null && request.auth.token.role == 'admin';
+    }
+
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
     // Public read access for categories, products, and blog posts
     match /categories/{document=**} {
       allow read: if true;
-      allow write: if request.auth != null && request.auth.token.role == 'admin';
+      allow write: if isAdmin();
     }
 
     match /products/{document=**} {
       allow read: if true;
-      allow write: if request.auth != null && request.auth.token.role == 'admin';
+      allow write: if isAdmin();
     }
 
     match /blog/{document=**} {
       allow read: if true;
-      allow write: if request.auth != null && request.auth.token.role == 'admin';
+      allow write: if isAdmin();
     }
 
-    // User profiles - users can read/write their own profile
+    // User profiles
     match /users/{userId} {
-      allow read: if request.auth != null && request.auth.uid == userId;
-      allow write: if request.auth != null && request.auth.uid == userId;
+      // Users can read/write their own profile, admins can access all
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      allow write: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
     }
 
-    // Admin access to all users
-    match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.token.role == 'admin';
+    // Admin-only collections (orders, analytics, etc.)
+    match /orders/{document=**} {
+      allow read, write: if isAdmin();
     }
 
-    // Deny all other access by default
+    match /analytics/{document=**} {
+      allow read, write: if isAdmin();
+    }
+
+    match /settings/{document=**} {
+      allow read, write: if isAdmin();
+    }
+
+    match /segments/{document=**} {
+      allow read, write: if isAdmin();
+    }
+
+    // Any other collections - deny by default unless admin
     match /{document=**} {
-      allow read, write: if false;
+      allow read, write: if isAdmin();
     }
   }
 }
