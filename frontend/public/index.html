@@ -6,6 +6,14 @@
     <meta name="description" content="K-pop Anime Shop - Premium K-pop and anime merchandise. T-shirts, hoodies, mugs, posters, keychains and more from your favorite artists and shows.">
     <meta name="keywords" content="kpop, anime, merchandise, tshirts, hoodies, posters, mugs, keychains, printful, kpop merch, anime merch">
     <title>K-pop Anime Shop - Premium K-pop & Anime Merchandise</title>
+
+    <!-- Redirect from .web.app to custom domain -->
+    <script>
+        if (window.location.hostname.includes('web.app')) {
+            window.location.href = 'https://kpopanimeshop.com' + window.location.pathname + window.location.search + window.location.hash;
+        }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

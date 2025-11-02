@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Preferences - K-pop Anime Shop</title>
+
+    <!-- Redirect from .web.app to custom domain -->
+    <script>
+        if (window.location.hostname.includes('web.app')) {
+            window.location.href = 'https://kpopanimeshop.com' + window.location.pathname + window.location.search + window.location.hash;
+        }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,7 +250,7 @@
         <div class="prefs-box">
             <div class="prefs-header">
                 <h1>My Preferences</h1>
-                <p>Personalize your magical journey</p>
+                <p>Customize your K-pop & anime experience</p>
             </div>
 
             <div id="messageContainer" class="message"></div>
@@ -255,7 +263,7 @@
                     <div class="form-group">
                         <label for="birthday">Birthday (Month & Day only)</label>
                         <input type="text" id="birthday" placeholder="MM-DD (e.g., 07-14)">
-                        <small style="color: var(--text-gray); font-size: 0.85rem;">We only store month/day for astrology & birthday promos</small>
+                        <small style="color: var(--text-gray); font-size: 0.85rem;">We only store month/day for birthday discounts & special offers</small>
                     </div>
 
                     <div class="form-group">
@@ -271,59 +279,59 @@
 
                 <!-- Experience Level -->
                 <div class="prefs-section">
-                    <h2 class="section-title">Experience Level</h2>
+                    <h2 class="section-title">Fan Level</h2>
                     <div class="radio-group">
                         <div class="radio-item">
                             <input type="radio" id="beginner" name="experienceLevel" value="beginner">
-                            <label for="beginner">Beginner - Just starting my journey</label>
+                            <label for="beginner">New Fan - Just discovering K-pop & anime</label>
                         </div>
                         <div class="radio-item">
                             <input type="radio" id="intermediate" name="experienceLevel" value="intermediate">
-                            <label for="intermediate">Intermediate - Practiced for a while</label>
+                            <label for="intermediate">Casual Fan - Enjoying for a while</label>
                         </div>
                         <div class="radio-item">
                             <input type="radio" id="advanced" name="experienceLevel" value="advanced">
-                            <label for="advanced">Advanced - Experienced practitioner</label>
+                            <label for="advanced">Hardcore Stan - Ultimate fan & collector</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Traditions -->
+                <!-- Interests -->
                 <div class="prefs-section">
-                    <h2 class="section-title">Traditions & Interests</h2>
-                    <label>Which traditions resonate with you?</label>
+                    <h2 class="section-title">Your Interests</h2>
+                    <label>What are you into?</label>
                     <div class="checkbox-group-container multi-select-grid">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-witchcraft" value="witchcraft">
-                            <label for="trad-witchcraft">Witchcraft (Eclectic)</label>
+                            <input type="checkbox" id="trad-witchcraft" value="kpop-boy-groups">
+                            <label for="trad-witchcraft">K-pop Boy Groups</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-wicca" value="wicca">
-                            <label for="trad-wicca">Wicca</label>
+                            <input type="checkbox" id="trad-wicca" value="kpop-girl-groups">
+                            <label for="trad-wicca">K-pop Girl Groups</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-hermeticism" value="hermeticism">
-                            <label for="trad-hermeticism">Hermeticism</label>
+                            <input type="checkbox" id="trad-hermeticism" value="anime-shonen">
+                            <label for="trad-hermeticism">Anime (Shonen)</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-chaos" value="chaos-magic">
-                            <label for="trad-chaos">Chaos Magic</label>
+                            <input type="checkbox" id="trad-chaos" value="anime-shojo">
+                            <label for="trad-chaos">Anime (Shojo)</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-hoodoo" value="hoodoo">
-                            <label for="trad-hoodoo">Hoodoo</label>
+                            <input type="checkbox" id="trad-hoodoo" value="anime-seinen">
+                            <label for="trad-hoodoo">Anime (Seinen)</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-folk" value="folk-magic">
-                            <label for="trad-folk">Folk Magic</label>
+                            <input type="checkbox" id="trad-folk" value="jpop">
+                            <label for="trad-folk">J-pop</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-tarot" value="tarot">
-                            <label for="trad-tarot">Tarot</label>
+                            <input type="checkbox" id="trad-tarot" value="manga">
+                            <label for="trad-tarot">Manga</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="trad-astrology" value="astrology">
-                            <label for="trad-astrology">Astrology</label>
+                            <input type="checkbox" id="trad-astrology" value="cosplay">
+                            <label for="trad-astrology">Cosplay</label>
                         </div>
                     </div>
                 </div>
@@ -331,39 +339,39 @@
                 <!-- Product Interests -->
                 <div class="prefs-section">
                     <h2 class="section-title">Favorite Product Types</h2>
-                    <label>What are you most interested in?</label>
+                    <label>What merchandise are you most interested in?</label>
                     <div class="checkbox-group-container multi-select-grid">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-candles" value="candles">
-                            <label for="prod-candles">Candles</label>
+                            <input type="checkbox" id="prod-candles" value="albums">
+                            <label for="prod-candles">Albums & CDs</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-oils" value="oils">
-                            <label for="prod-oils">Oils</label>
+                            <input type="checkbox" id="prod-oils" value="photocards">
+                            <label for="prod-oils">Photocards</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-herbs" value="herbs">
-                            <label for="prod-herbs">Herbs</label>
+                            <input type="checkbox" id="prod-herbs" value="posters">
+                            <label for="prod-herbs">Posters</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-crystals" value="crystals">
-                            <label for="prod-crystals">Crystals</label>
+                            <input type="checkbox" id="prod-crystals" value="lightsticks">
+                            <label for="prod-crystals">Lightsticks</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-tarot" value="tarot-decks">
-                            <label for="prod-tarot">Tarot Decks</label>
+                            <input type="checkbox" id="prod-tarot" value="figures">
+                            <label for="prod-tarot">Figures & Dolls</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-altars" value="altars">
-                            <label for="prod-altars">Altar Supplies</label>
+                            <input type="checkbox" id="prod-altars" value="apparel">
+                            <label for="prod-altars">Apparel & Fashion</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-books" value="books">
-                            <label for="prod-books">Books/Grimoire</label>
+                            <input type="checkbox" id="prod-books" value="manga-books">
+                            <label for="prod-books">Manga & Art Books</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="prod-courses" value="courses">
-                            <label for="prod-courses">Courses</label>
+                            <input type="checkbox" id="prod-courses" value="accessories">
+                            <label for="prod-courses">Accessories</label>
                         </div>
                     </div>
                 </div>

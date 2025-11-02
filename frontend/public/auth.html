@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In / Sign Up - K-pop Anime Shop</title>
+
+    <!-- Redirect from .web.app to custom domain -->
+    <script>
+        if (window.location.hostname.includes('web.app')) {
+            window.location.href = 'https://kpopanimeshop.com' + window.location.pathname + window.location.search + window.location.hash;
+        }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
